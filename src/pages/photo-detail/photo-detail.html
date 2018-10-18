@@ -1,0 +1,45 @@
+<!--
+  Generated template for the PhotoDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>photo-detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h3>{{photodetail.title}}</h3>
+    <h4>{{photodetail.dices}}</h4>
+    <h4>{{photodetail.clientnames}}</h4>
+    <ion-slides style="height:200px"  autoplay=2000 loop=true pager=true>
+        <ion-slide *ngFor="let tmp of imgs">
+          <img [src]="'http://localhost:5000/'+tmp.img_url" alt="">
+        </ion-slide>
+      </ion-slides>
+    <!-- <img [src]="'http://localhost:5000/'+imgs[0].img_url" alt=""> -->
+
+</ion-content>
+
+<ion-footer>
+    <!-- 将自定义布局放在页脚中 -->
+    <ion-grid>
+      <ion-row> 
+        <ion-col col-10>
+          <ion-item>
+            <ion-input type="text" placeholder="评论一下吧！"></ion-input>
+          </ion-item> 
+        </ion-col> 
+        <ion-col col-2>
+          <button ion-button color='danger' block>发送</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
+
+
+
